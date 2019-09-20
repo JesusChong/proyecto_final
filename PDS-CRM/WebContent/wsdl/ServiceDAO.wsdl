@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://service" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://service" xmlns:intf="http://service" xmlns:tns1="http://orm.org" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://service" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://orm.org"/>
+   <element name="verPerfil">
+    <complexType>
+     <sequence>
+      <element name="run" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="verPerfilResponse">
+    <complexType>
+     <sequence>
+      <element name="verPerfilReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="fault" type="tns1:PersistentException"/>
+   <element name="busquedaSimple">
+    <complexType>
+     <sequence>
+      <element name="cadenaBusqueda" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="busquedaSimpleResponse">
+    <complexType>
+     <sequence>
+      <element name="busquedaSimpleReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="busquedaAvanzada">
+    <complexType>
+     <sequence>
+      <element name="run" type="xsd:string"/>
+      <element name="nombre" type="xsd:string"/>
+      <element name="apellido" type="xsd:string"/>
+      <element name="email" type="xsd:string"/>
+      <element name="fono" type="xsd:string"/>
+      <element name="direccion" type="xsd:string"/>
+      <element name="genero" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="busquedaAvanzadaResponse">
+    <complexType>
+     <sequence>
+      <element name="busquedaAvanzadaReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="verificarUsuario">
+    <complexType>
+     <sequence>
+      <element name="usser" type="xsd:string"/>
+      <element name="pass" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="verificarUsuarioResponse">
+    <complexType>
+     <sequence>
+      <element name="verificarUsuarioReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://orm.org" xmlns="http://www.w3.org/2001/XMLSchema">
+   <complexType name="PersistentException">
+    <sequence/>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="busquedaSimpleRequest">
+
+      <wsdl:part element="impl:busquedaSimple" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="busquedaSimpleResponse">
+
+      <wsdl:part element="impl:busquedaSimpleResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="busquedaAvanzadaRequest">
+
+      <wsdl:part element="impl:busquedaAvanzada" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="verificarUsuarioRequest">
+
+      <wsdl:part element="impl:verificarUsuario" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="PersistentException">
+
+      <wsdl:part element="impl:fault" name="fault">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="busquedaAvanzadaResponse">
+
+      <wsdl:part element="impl:busquedaAvanzadaResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="verPerfilRequest">
+
+      <wsdl:part element="impl:verPerfil" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="verificarUsuarioResponse">
+
+      <wsdl:part element="impl:verificarUsuarioResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="verPerfilResponse">
+
+      <wsdl:part element="impl:verPerfilResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="ServiceDAO">
+
+      <wsdl:operation name="verPerfil">
+
+         <wsdl:input message="impl:verPerfilRequest" name="verPerfilRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:verPerfilResponse" name="verPerfilResponse">
+
+       </wsdl:output>
+
+         <wsdl:fault message="impl:PersistentException" name="PersistentException">
+
+       </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="busquedaSimple">
+
+         <wsdl:input message="impl:busquedaSimpleRequest" name="busquedaSimpleRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:busquedaSimpleResponse" name="busquedaSimpleResponse">
+
+       </wsdl:output>
+
+         <wsdl:fault message="impl:PersistentException" name="PersistentException">
+
+       </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="busquedaAvanzada">
+
+         <wsdl:input message="impl:busquedaAvanzadaRequest" name="busquedaAvanzadaRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:busquedaAvanzadaResponse" name="busquedaAvanzadaResponse">
+
+       </wsdl:output>
+
+         <wsdl:fault message="impl:PersistentException" name="PersistentException">
+
+       </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="verificarUsuario">
+
+         <wsdl:input message="impl:verificarUsuarioRequest" name="verificarUsuarioRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:verificarUsuarioResponse" name="verificarUsuarioResponse">
+
+       </wsdl:output>
+
+         <wsdl:fault message="impl:PersistentException" name="PersistentException">
+
+       </wsdl:fault>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ServiceDAOSoapBinding" type="impl:ServiceDAO">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="verPerfil">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="verPerfilRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="verPerfilResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="PersistentException">
+
+            <wsdlsoap:fault name="PersistentException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="busquedaSimple">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="busquedaSimpleRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="busquedaSimpleResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="PersistentException">
+
+            <wsdlsoap:fault name="PersistentException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="busquedaAvanzada">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="busquedaAvanzadaRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="busquedaAvanzadaResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="PersistentException">
+
+            <wsdlsoap:fault name="PersistentException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="verificarUsuario">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="verificarUsuarioRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="verificarUsuarioResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="PersistentException">
+
+            <wsdlsoap:fault name="PersistentException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ServiceDAOService">
+
+      <wsdl:port binding="impl:ServiceDAOSoapBinding" name="ServiceDAO">
+
+         <wsdlsoap:address location="http://localhost:8080/PDS-CRM/services/ServiceDAO"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

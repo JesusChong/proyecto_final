@@ -1,0 +1,57 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from ServiceDAOService WSDL service -->
+
+  <service name="ServiceDAO" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://service"/>
+      <parameter name="wsdlServiceElement" value="ServiceDAOService"/>
+      <parameter name="schemaQualified" value="http://service,http://orm.org"/>
+      <parameter name="wsdlServicePort" value="ServiceDAO"/>
+      <parameter name="className" value="service.ServiceDAOSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="ServiceDAO"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="verPerfil" qname="operNS:verPerfil" xmlns:operNS="http://service" returnQName="retNS:verPerfilReturn" xmlns:retNS="http://service" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:run" xmlns:pns="http://service" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <fault name="PersistentException" qname="fns:fault" xmlns:fns="http://service" class="org.orm.PersistentException" type="tns:PersistentException" xmlns:tns="http://orm.org"/>
+      </operation>
+      <operation name="busquedaSimple" qname="operNS:busquedaSimple" xmlns:operNS="http://service" returnQName="retNS:busquedaSimpleReturn" xmlns:retNS="http://service" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:cadenaBusqueda" xmlns:pns="http://service" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <fault name="PersistentException" qname="fns:fault" xmlns:fns="http://service" class="org.orm.PersistentException" type="tns:PersistentException" xmlns:tns="http://orm.org"/>
+      </operation>
+      <operation name="busquedaAvanzada" qname="operNS:busquedaAvanzada" xmlns:operNS="http://service" returnQName="retNS:busquedaAvanzadaReturn" xmlns:retNS="http://service" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:run" xmlns:pns="http://service" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:nombre" xmlns:pns="http://service" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:apellido" xmlns:pns="http://service" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:email" xmlns:pns="http://service" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:fono" xmlns:pns="http://service" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:direccion" xmlns:pns="http://service" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:genero" xmlns:pns="http://service" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <fault name="PersistentException" qname="fns:fault" xmlns:fns="http://service" class="org.orm.PersistentException" type="tns:PersistentException" xmlns:tns="http://orm.org"/>
+      </operation>
+      <operation name="verificarUsuario" qname="operNS:verificarUsuario" xmlns:operNS="http://service" returnQName="retNS:verificarUsuarioReturn" xmlns:retNS="http://service" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:usser" xmlns:pns="http://service" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pass" xmlns:pns="http://service" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <fault name="PersistentException" qname="fns:fault" xmlns:fns="http://service" class="org.orm.PersistentException" type="tns:PersistentException" xmlns:tns="http://orm.org"/>
+      </operation>
+      <parameter name="allowedMethods" value="busquedaSimple busquedaAvanzada verPerfil verificarUsuario"/>
+
+      <typeMapping
+        xmlns:ns="http://orm.org"
+        qname="ns:PersistentException"
+        type="java:org.orm.PersistentException"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>
