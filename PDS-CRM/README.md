@@ -1,3 +1,4 @@
 # PDS-CRM
-**Autores:** Chong Vargas
-             Isaias Hernandez Gomez
+**Autores:** 
+Chong Vargas
+Isaias Hernandez Gomez
