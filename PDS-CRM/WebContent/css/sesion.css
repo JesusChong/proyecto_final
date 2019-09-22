@@ -1,0 +1,49 @@
+body {
+	background: url(../img/principal.jpg) no-repeat center center fixed;
+	background-size: cover;
+  	font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+
+.main-section{
+	margin:0 auto;
+	margin-top: 25%;
+	padding: 0;
+}
+
+.modal-content{
+	background-color: dimgray;
+	opacity: .85;
+	padding: 0 20px;
+	
+}
+
+.user-img{
+	margin-top: -50px;
+	margin-bottom: -20px;
+	margin-left: 10px;
+}
+
+
+.user-img img{
+	width: 200px;
+	height: 200px;
+	
+}
+
+.forgot{
+	padding: 10px; 
+}
+
+.forgot a{
+	color: white;
+}
