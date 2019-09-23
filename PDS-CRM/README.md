@@ -1,4 +1,4 @@
-# PDS-CRM
+# CRM
 **Autor:** Isaias Hernanndez
 			
 Aplicación web estructurada en Java EE, basada en principios de CRM.
