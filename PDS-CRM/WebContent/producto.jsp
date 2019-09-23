@@ -43,9 +43,10 @@
    	 
     	<div class="nav navbar-nav navbar-right">
      		<form class="form-inline">
-   				<a href="sesion.jsp"><button class="btn btn-sm btn-outline-secondary" type="button">Iniciar sesion</button></a>
-   				 <a href="registro.jsp"><button class="btn btn-sm btn-outline-secondary" type="button">Registrarse</button></a>
-  			</form>
+					<a href="Index.jsp"><button class="btn btn-sm btn-outline-secondary" type="button">Probar el gestor gratis</button></a>
+				
+				<!--  <a href="registro.jsp"><button class="btn btn-sm btn-outline-secondary" type="button">Registrarse</button></a>-->
+			</form>
       	</div>
   </nav>
 

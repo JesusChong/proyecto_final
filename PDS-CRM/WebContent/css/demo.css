@@ -1,8 +1,4 @@
-/*
- * Name: Isaias Hernandez Gomez  
- */
-
-
+@charset "ISO-8859-1";
 body {
   font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
@@ -20,7 +16,7 @@ h6 {
 header.masthead {
   position: relative;
   background-color: #343a40;
-  background: url("../img/principal.jpg") no-repeat center center;
+  background: url("../img/demo.jpg") no-repeat center center;
   background-size: cover;
   padding-top: 8rem;
   padding-bottom: 8rem;
@@ -28,7 +24,7 @@ header.masthead {
 
 header.masthead .overlay {
   position: absolute;
-  background-color: #212529;
+  background-color: aliceblue;
   height: 100%;
   width: 100%;
   top: 0;
@@ -129,42 +125,5 @@ footer.footer {
 	Isaias Hernandez Gomez
 
 */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
