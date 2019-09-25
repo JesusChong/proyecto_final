@@ -90,7 +90,7 @@
           <h2>Agrega a personas</h2>
           <h4>Permite tener una cartera de clientes</h4>
           <p class="lead mb-0"></p>
-			<input type="submit" value="Agregar Persona" class="btn btn-success">
+			<a href="FormAddPersona.jsp" class="btn btn-success">Agregar Persona</a>
         </div>
       </div>
       
@@ -100,7 +100,7 @@
           <h2>Consulta la cartera de clientes</h2>
           <h4>Facil acceso, de manera ordenada</h4>
           <p class="lead mb-0"></p>
-        	<input type="submit" value="Lista de Personas" class="btn btn-info">
+        	<a href="ListPersona.jsp" class="btn btn-info">Lista de Personas</a>
         </div>
       </div>
     </div>
@@ -110,7 +110,7 @@
           <h2>Consulta tus empresas</h2>
           <h4>Informacion en un instante de cualquier empresa</h4>
           <p class="lead mb-0"></p>
-			<input type="submit" value="Lista de Empresa" class="btn btn-info">
+			<a href="ListEmpresa.jsp" class="btn btn-info">Lista de Empresa</a>
         </div>
       </div>
     </div>
